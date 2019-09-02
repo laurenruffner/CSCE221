@@ -1,13 +1,7 @@
-all: Main
+all: TemplateMain
 
-Main: DoublyLinkedList.o Main.o
-	g++ -std=c++11 DoublyLinkedList.o Main.o -o run-dll
-
-DoublyLinkedList.o: DoublyLinkedList.cpp DoublyLinkedList.h
-	g++ -std=c++11 -c DoublyLinkedList.cpp
-
-Main.o: Main.cpp DoublyLinkedList.h
-	g++ -std=c++11 -c Main.cpp
+TemplateMain: TemplateMain.cpp TemplateDoublyLinkedList.h
+	g++ -std=c++11 TemplateMain.cpp -o run-tdll
 
 clean:
-	rm *.o Main
+	rm *.o *.gch TemplateMain
